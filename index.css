@@ -1,0 +1,241 @@
+/* Add fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+/* All Class using same dataset */
+:root{
+    /* Define Variables */
+    --accent : #FF8A00; /* Button Color from Figma */
+    --accentHover : #FF2E00; /* Mouse Hover -> Dark */
+    --dark80 : rgba(255, 72, 0, 0.8) ; /* 0.8 = 80% */
+    --dark : #000000;
+    --light : #FFFFFF;
+    --transition: all 0.3s ease 0s /* Define delay time */
+}
+
+/* All Section */
+*{
+    /* Clear margin and padding */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%; /* fixed height using Scroll */
+    overflow: auto;
+}
+
+body{
+    /* Gradient shade of Color */
+    /*background: linear-gradient(      !!! OPTIONAL !!!
+        var(--dark80), var(--dark80)
+    ),
+    url(./images/Background.jpg); */
+
+    background-image: url(/images/Background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Fixed Scale Screen */
+}
+
+a, button{
+    font-family: 'Oswald';
+    color: var(--light);
+
+}
+
+p{
+    font-family: "";
+    color: var(--dark);
+}
+
+a, button, .logo{
+    cursor: pointer; /* link Element Logo & Button --> Hand Cursor */
+}
+
+main{
+    height: 100;
+    display: grid; /* Work on grid */
+    grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px))
+    minmax(60px, 1fr);
+}
+
+header{
+    grid-column: 2 / span 6; /* header start 2nd col amd other last column */
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+/* Class */
+.links{
+    margin-left: auto;
+}
+
+.links a, .links button{
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: var(--transition); /* Action */
+}
+
+.links a{
+    margin-right: 20px;
+}
+
+.links a:hover{
+    color: var(--accentHover); /* Cursor Color --> Change Color */
+}
+
+.button_med{
+    border: none;
+    background-color: var(--accent);
+    padding: 8px 25px;
+    transition: var(--transition);
+}
+
+.button_med:hover{
+    color: var(--accentHover);
+}
+
+.info{
+    grid-column: 3 /span 3;
+    margin-top: 25%;
+}
+
+.content_font1{
+    font-family: 'Oswald';
+    color: black;
+    font-size: 3.5rem;
+}
+
+.content_font2{
+    font-family: "";
+    color: #4B4B4B;
+    font-size: 1.5rem;
+}
+
+.icons{
+    margin-top: 45%;;
+    display: flex;
+}
+
+.icon{
+    margin-right: 30px;
+}
+
+.icon-img1 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 61px;
+}
+
+.icon-img2 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 47px;
+}
+
+.icon-img3 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 14px;
+}
+
+.icon-img4 {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 8px;
+}
+
+.icon_info{
+    text-align: center;
+    font-size: 14px;
+}
+
+.features{
+    grid-column: 6 / span 7;
+    background-color: #0f0000;
+    margin-top: 70%; 
+    /* top right bottom left */
+    padding: 30px 0px 0px 20px;
+    display: flex;
+    align-items: left;
+    border-radius: 10%;
+}
+
+.feature{
+    display: flex;
+    /* top right bottom left */
+    margin: 0px 10px 30px 10px;
+}
+
+.feature img{
+    width: 130px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.feature_info p{
+    color: rgb(255, 255, 255);
+}
+
+.feature_top, .feature_more{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.feature_bottom{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.feature:nth-child(3){
+    align-self: flex-start;
+}
+
+.feature_more{
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.feature_more:hover{
+    color: var(--accent);
+}
+
+/* Responsive Website*/
+@media only screen and (max-width:1100px){
+    .icon img{
+        height: 55px;
+        width: auto;
+    }
+    .content_font1 .content_font2{
+        font-size: 2.75rem;
+    }
+    .feature{
+        grid-column: 1 / span 7;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    .info{
+        grid-column: 2 / span 6;
+    }
+    .icons{
+        flex-direction: column;
+    }
+    .content_font1 .content_font2{
+        font-size: 1.75rem;;
+    }
+    .features{
+        flex-direction: column;
+    }
+}
